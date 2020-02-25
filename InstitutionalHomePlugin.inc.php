@@ -47,9 +47,12 @@ class InstitutionalHomePlugin extends GenericPlugin {
 	 * Add a property to the context schema
 	 *
 	 * @param $hookName string `Schema::get::context`
-	 * @param $schema object Context schema
+	 * @param $args [[
+	 * 	@option object Context schema
+	 * ]]
 	 */
-	public function addToSchema($hookName, $schema) {
+	public function addToSchema($hookName, $args) {
+		$schema = $args[0];
 		$prop = '{
 			"type": "string",
 			"apiSummary": true,
